@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar localización" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aPM-Y7-8uh">
+                                <rect key="frame" x="16" y="46" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Rdw-sh-Hlp"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Localización" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGW-r8-NBj">
+                                <rect key="frame" x="202" y="14" width="196" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="OAn-Qy-rg0"/>
+                                    <constraint firstAttribute="height" constant="21" id="yF7-PB-LMq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Ww-Cc-SKq">
+                                <rect key="frame" x="0.0" y="76" width="600" height="278"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="RPB-Qc-okR"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Fxh-JX-SZh"/>
+                                </connections>
+                            </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OqZ-yL-OZE">
+                                <rect key="frame" x="0.0" y="354" width="600" height="246"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="swJ-rL-4mO"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8Ww-Cc-SKq" secondAttribute="bottom" constant="246" id="95z-e5-R2Q">
+                                <variation key="heightClass=compact" constant="158"/>
+                            </constraint>
+                            <constraint firstItem="OqZ-yL-OZE" firstAttribute="top" secondItem="8Ww-Cc-SKq" secondAttribute="bottom" id="Bgb-Yc-cyM"/>
+                            <constraint firstItem="pGW-r8-NBj" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="14" id="C1I-6q-7OQ"/>
+                            <constraint firstItem="OqZ-yL-OZE" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Gr9-fK-5j2"/>
+                            <constraint firstItem="8Ww-Cc-SKq" firstAttribute="top" secondItem="aPM-Y7-8uh" secondAttribute="bottom" id="I7L-ff-GPA"/>
+                            <constraint firstItem="aPM-Y7-8uh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="IFd-ib-QyX"/>
+                            <constraint firstItem="pGW-r8-NBj" firstAttribute="centerX" secondItem="aPM-Y7-8uh" secondAttribute="centerX" id="IJc-la-4H4"/>
+                            <constraint firstItem="OqZ-yL-OZE" firstAttribute="leading" secondItem="8Ww-Cc-SKq" secondAttribute="leading" id="NzI-BY-Rdp"/>
+                            <constraint firstItem="aPM-Y7-8uh" firstAttribute="top" secondItem="pGW-r8-NBj" secondAttribute="bottom" constant="11" id="hQN-he-seJ"/>
+                            <constraint firstItem="aPM-Y7-8uh" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="qSu-wk-aoT"/>
+                            <constraint firstItem="pGW-r8-NBj" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="sbk-iE-TM5"/>
+                            <constraint firstItem="pGW-r8-NBj" firstAttribute="centerX" secondItem="8Ww-Cc-SKq" secondAttribute="centerX" id="uLg-eU-D8D"/>
+                            <constraint firstItem="OqZ-yL-OZE" firstAttribute="trailing" secondItem="8Ww-Cc-SKq" secondAttribute="trailing" id="vUx-bx-Aic"/>
+                            <constraint firstItem="8Ww-Cc-SKq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="z8K-Hv-9y5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="8Ww-Cc-SKq" id="7uh-0I-dOl"/>
+                        <outlet property="input" destination="aPM-Y7-8uh" id="acE-38-Y0u"/>
+                        <outlet property="mapView" destination="OqZ-yL-OZE" id="nEq-qx-hf0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="368" y="522"/>
+        </scene>
+    </scenes>
+</document>
